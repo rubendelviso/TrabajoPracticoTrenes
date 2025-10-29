@@ -110,6 +110,48 @@ describe("----Testeando requerimientos ----", () => {
         trensito.HacerMantenimiento()
         expect(trensito.RecibieronMantenimiento()).toBe(true)
     })
+        test("Tests pedidos", ()=>
+    {
+        const trensito = new Tren ()
+        const vp = new VagonPasajero(4,10,true,true) // El ultimo atributo es si esta ordenado
+        const vpDO = new VagonPasajero(2,7,false,false)
+        
+
+        const vc = new VagonCarga(6800,5) //
+        const vdor= new VagonDormitorio(8,3)
+        
+        trensito.AgregarVagon(vp)
+        trensito.AgregarVagon(vpDO)
+        trensito.AgregarVagon(vc)
+        trensito.AgregarVagon(vdor)
+        console.log("\tvagon 1:\tCantidad de pasajeros:",vp.cantidadDePasajeros(),"\tPeso maximo:",vp.PesoMaximo(),"\tCarga Maxima:",vp.MaximoCarga(),"\tTiene Baño:",vp.TieneBanios())
+
+        console.log("\tvagon 2:\tCantidad de pasajeros:",vpDO.cantidadDePasajeros(),"\tPeso maximo:",vpDO.PesoMaximo(),"\tCarga Maxima:",vpDO.MaximoCarga(),"\tTiene Baño:",vpDO.TieneBanios())
+
+        console.log("\tvagon 3:\tCantidad de pasajeros:",vc.cantidadDePasajeros(),"\tPeso maximo:",vc.PesoMaximo(),"\tCarga Maxima:",vc.MaximoCarga(),"\tTiene Baño:",vc.TieneBanios())
+        console.log("\tvagon 4:\tCantidad de pasajeros:",vdor.cantidadDePasajeros(),"\tPeso maximo:",vdor.PesoMaximo(),"\tCarga Maxima:",vdor.MaximoCarga(),"\tTiene Baño:",vdor.TieneBanios())
+        console.log(trensito.VagonesPopulares())            
+        vp.RecibirMantenimiento()
+        vpDO.RecibirMantenimiento()
+        vc.RecibirMantenimiento()
+        vdor.RecibirMantenimiento()
+        
+
+        console.log("--------------Despues de hacer mantenimiento-------------")
+        
+        console.log("\tvagon 1:\tCantidad de pasajeros:",vp.cantidadDePasajeros(),"\tPeso maximo:",vp.PesoMaximo(),"\tCarga Maxima:",vp.MaximoCarga(),"\tTiene Baño:",vp.TieneBanios())
+
+        console.log("\tvagon 2:\tCantidad de pasajeros:",vpDO.cantidadDePasajeros(),"\tPeso maximo:",vpDO.PesoMaximo(),"\tCarga Maxima:",vpDO.MaximoCarga(),"\tTiene Baño:",vpDO.TieneBanios())
+
+        console.log("\tvagon 3:\tCantidad de pasajeros:",vc.cantidadDePasajeros(),"\tPeso maximo:",vc.PesoMaximo(),"\tCarga Maxima:",vc.MaximoCarga(),"\tTiene Baño:",vc.TieneBanios())
+        console.log("\tvagon 4:\tCantidad de pasajeros:",vdor.cantidadDePasajeros(),"\tPeso maximo:",vdor.PesoMaximo(),"\tCarga Maxima:",vdor.MaximoCarga(),"\tTiene Baño:",vdor.TieneBanios())        
+        
+        
+        
+        console.log(trensito.VagonesPopulares())
+        
+        
+    })
 
 
 })

@@ -13,6 +13,7 @@ class VagonPasajero extends Vagon{
     }
 
     EstaOrdenado(){
+
         return (this.estaordenado)
     }
     MaximoCarga(){
@@ -20,6 +21,7 @@ class VagonPasajero extends Vagon{
     }
     RecibirMantenimiento(){
         this.estaordenado?this.estaordenado:this.estaordenado = true
+        
 
     }
     cantidadDePasajeros(){
@@ -35,6 +37,8 @@ class VagonPasajero extends Vagon{
             
             return ((this.estaordenado?100:85)-restaPasajero)
         }
+        else
+            return( (this.estaordenado?"cambiar":"preguntar"))
     }
     PesoMaximo(){
         

@@ -16,7 +16,7 @@ class vagonDormitorio extends Vagon{
         return(true)
     }
     MaximoCarga(){return(1200)}
-    PesoMaximo(){return(4000+(80*this.CantidadDePasajeros())+this.MaximoCarga())}
+    PesoMaximo(){return(4000+(80*this.cantidadDePasajeros())+this.MaximoCarga())}
     RecibirMantenimiento(){}
 }
 

@@ -27,6 +27,7 @@ class VagonCarga extends Vagon {
         else if(this.maderasSueltas ===1){this.maderasSueltas= 0}
         // Math.min(0,this.maderasSueltas-=2)
     }
+    
 
 }
 //Prueba
