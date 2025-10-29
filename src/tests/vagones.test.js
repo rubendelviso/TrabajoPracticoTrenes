@@ -153,5 +153,35 @@ describe("----Testeando requerimientos ----", () => {
         
     })
 
+    test("Verificando la segunda formacion", () => {
+
+        const trensito = new Tren() 
+
+        const vc = new VagonCarga(8000,1) //
+        const vdor= new VagonDormitorio(15,4)
+        
+
+        trensito.AgregarVagon(vc)
+        trensito.AgregarVagon(vdor)
+
+        console.log("\tvagon 1:\tCantidad de pasajeros:",vc.cantidadDePasajeros(),"\tTiene Baño:",vc.TieneBanios(),)
+        console.log("\tvagon 2:\tCantidad de pasajeros:",vdor.cantidadDePasajeros(),"\tCarga Maxima:",vdor.MaximoCarga(),"\tTiene Baño:",vdor.TieneBanios(),"\tDispersion de pesos:",trensito.DispersionDePesos())
+        
+        console.log("Vagones populares ->:",trensito.VagonesPopulares())
+
+
+        vc.RecibirMantenimiento()
+        vdor.RecibirMantenimiento()
+        
+
+        console.log("--------------Despues de hacer mantenimiento-------------")
+        
+        
+
+        console.log("\tvagon 1:\tCantidad de pasajeros:",vc.cantidadDePasajeros(),"\tPeso maximo:",vc.PesoMaximo(),"\tCarga Maxima:",vc.MaximoCarga(),"\tTiene Baño:",vc.TieneBanios())
+        console.log("\tvagon 2:\tCantidad de pasajeros:",vdor.cantidadDePasajeros(),"\tTiene Baño:",vdor.TieneBanios(),"\tDispersion de pesos:",trensito.DispersionDePesos())
+        console.log("Vagones populares ->:",trensito.VagonesPopulares())        
+    })
+
 
 })
