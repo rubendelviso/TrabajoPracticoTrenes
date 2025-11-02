@@ -85,7 +85,9 @@ class Tren {
     }
 
     velocidadLocomotora(){
-        return Math.min(...this.locomotoras.velocidad)
+        const velocidades = this.locomotoras.map((loc )=> {return loc.velocidad})
+        return Math.min(...velocidades)
+        // return Math.min(...this.locomotoras.velocidad)
 
     }
     EsEficiente(){//Si es eficiente; o sea, si todas sus locomotoras lo son.
@@ -120,9 +122,15 @@ class Tren {
     EmpujeFaltante(){
      
         const sumaDeArrastre = this.locomotoras.reduce((acc,curr )=> acc+= curr.arrastre,0)
-        return Math.max(0,this.PesoDeLaFormacion()-sumaDeArrastre)
+        return Math.max(0,this.PesoDeLaFormacion()-sumaDeArrastre) //Lo hice sobre todas las locomotras,(chequear)
 
 
+    }
+    EsCompleja(){
+        const cantidadDeUnidades = this.vagones.length+this.locomotoras.length
+        console.log(this.PesoDeLaFormacion())
+        console.log(cantidadDeUnidades)
+        return cantidadDeUnidades>8 || this.PesoDeLaFormacion()>80000 
     }
 
     }
@@ -153,13 +161,13 @@ const Vd = new vagonDormitorio(4,5)// pesa -> 5300
 elTren.vagones.push(Vp)
 elTren.vagones.push(Vc)
 elTren.vagones.push(Vd)
-// elTren.vagones.push(Vcd)
+elTren.vagones.push(Vcd)
 
 elTren.locomotoras.push(locom)// pesa -> 1000
 elTren.locomotoras.push(locmo)// pesa -> 1000
 elTren.locomotoras.push(locomo)// pesa -> 1000
 // console.log(elTren.EmpujeFaltante())
-console.log(elTren.velocidadLocomotora())
+console.log(elTren.EsCompleja())
 // console.log("\nel tren:\n",elTren)
 // console.log(elTren.EstaEquilibrada())
 

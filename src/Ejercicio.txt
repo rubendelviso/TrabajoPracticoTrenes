@@ -137,3 +137,14 @@ Una locomotora de peso 5000 kg y arrastre 22000 kg.
 Si a la formación le agregamos la locomotora 1, entonces, es eficiente, no puede moverse, y le faltan 12800 kg de empuje.
 
 Si a la misma formación le agregamos también la locomotora 2, entonces no es eficiente, sí puede moverse, y le faltan 0 kilos de empuje.
+
+Agregar al modelo los depósitos ferroviarios. En cada depósito hay: formaciones ya armadas, y locomotoras sueltas.
+
+Se pide resolver lo siguiente:
+
+Dado un depósito, obtener el conjunto formado por el vagón más pesado de cada formación; se espera un conjunto de vagones.
+1. Saber si un depósito necesita un conductor experimentado.
+2. Un depósito necesita un conductor experimentado si alguna de sus formaciones es compleja. Una formación es compleja si: tiene más de 8 unidades (sumando locomotoras y vagones), o el peso máximo es de más de 80000 kg.
+3. Que un depósito pueda agregar una locomotora a una formación determinada, de forma tal que la formación pueda moverse.
+Si la formación ya puede moverse, entonces no se hace nada.
+Si no, se le agrega una locomotora suelta del depósito cuyo arrastre sea mayor o igual a los kilos de empuje que le faltan a la formación. Si no hay ninguna locomotora suelta que cumpla esta condición, no se hace nada.
