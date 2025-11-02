@@ -26,16 +26,16 @@ class VagonPasajero extends Vagon{
     }
     cantidadDePasajeros(){
 
-        const restaPasajero= this.estaordenado?0:15 
+        // const restaPasajero= this.estaordenado?0:15 
 
         if (this.largo ===10 && this.ancho === 2){
-            return ((this.estaordenado?80:65)-restaPasajero)
+            return (this.estaordenado?80:65)
             
         }
         else if(this.largo ===10 && this.ancho === 4){
             // console.log("Holaa")
             
-            return ((this.estaordenado?100:85)-restaPasajero)
+            return (this.estaordenado?100:85)
         }
         else
             return( (this.estaordenado?"cambiar":"preguntar"))

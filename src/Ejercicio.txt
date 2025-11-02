@@ -109,3 +109,31 @@ es carguero	   sí	   sí
 dispersión de pesos	   900	   500
 baños	   1	   1
 Por qué cambia la dispersión de pesos: el vagón de carga aumenta su peso máximo de 9100 a 9500 kilos, al pasar de una madera suelta a ninguna. El peso máximo del vagón dormitorio es 10000, antes y después del mantenimiento.
+
+
+---------------------------------------------------------------------------------------
+
+
+
+Etapa 2 - (Actividad)
+Agregar al modelo las locomotoras. De cada locomotora debe indicarse: su peso, hasta cuánto peso puede arrastar, y su velocidad máxima. Decimos que una locomotora es eficiente si puede arrastrar, al menos, cinco veces su peso. P.ej. una locomotora que pesa 1000 kilos y puede arrastar hasta 7000 es eficiente; si puede arrastrar hasta 3000 entonces no es eficiente.
+Ahora una formación incluye locomotoras (pueden ser varias), además de vagones.
+
+Con el modelo ampliado, tiene que poder obtenerse fácilmente, para una formación:
+
+1. su velocidad máxima , que es el mínimo entre las velocidades máximas de las locomotoras.
+2. Si es eficiente; o sea, si todas sus locomotoras lo son.
+3. Si puede moverse. Una formación puede moverse si la suma del arrastre de cada una de sus locomotoras, es mayor o igual al peso máximo de la formación, que es: peso de las locomotoras + peso máximo de los vagones.
+4. Cuántos kilos de empuje le faltan para poder moverse, que es: 0 si ya se puede mover, y si no, el resultado de: peso máximo - suma de arrastre de cada locomotora.
+P.ej. si una formación tiene una locomotora que pesa 1000 kilos y arrastra hasta 30000, y cuatro vagones, de 6000 kilos de peso máximo cada uno, entonces sí puede moverse, porque su peso máximo es 25000.
+Si agregamos dos vagones más de 6000 kilos, llevamos el peso máximo a 37000. Ahora la formación no puede moverse y le faltan 7000 kilos de empuje.
+
+Tests etapa 2
+Consideremos la primera formación de los tests de la etapa 1, sin hacerle mantenimiento. Contando sólo los vagones, el peso máximo es 29800.
+Definamos dos locomotoras:
+
+Una locomotora de peso 3000 kg y arrastre 20000 kg.
+Una locomotora de peso 5000 kg y arrastre 22000 kg.
+Si a la formación le agregamos la locomotora 1, entonces, es eficiente, no puede moverse, y le faltan 12800 kg de empuje.
+
+Si a la misma formación le agregamos también la locomotora 2, entonces no es eficiente, sí puede moverse, y le faltan 0 kilos de empuje.
