@@ -167,7 +167,7 @@ elTren.locomotoras.push(locom)// pesa -> 1000
 elTren.locomotoras.push(locmo)// pesa -> 1000
 elTren.locomotoras.push(locomo)// pesa -> 1000
 // console.log(elTren.EmpujeFaltante())
-console.log(elTren.EsCompleja())
+// console.log(elTren.EsCompleja())
 // console.log("\nel tren:\n",elTren)
 // console.log(elTren.EstaEquilibrada())
 
