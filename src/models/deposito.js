@@ -20,6 +20,8 @@ ConductorExperimentado(){
 }
 
 locomotoraAFormacion(formacion){
+
+    if (!formacion.PuedeMoverse()) return "la formacion puede moverse";
     if (this.locomotorasSueltas.length === 0) { return "No hay locomotoras disponibles"}
     // console.log(formacion.PesoDeLaFormacion())  
     const LocEncontrada = this.locomotorasSueltas.find(loc=> loc.arrastre>= formacion.PesoDeLaFormacion())
